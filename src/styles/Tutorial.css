@@ -1,0 +1,123 @@
+/* Tutorial Overlay Component */
+
+.tutorial-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.tutorial-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.tutorial-card {
+  position: relative;
+  z-index: 1001;
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-dark) 100%);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 0 40px rgba(255, 0, 110, 0.8);
+  animation: slide-in-up 0.4s ease-out;
+  pointer-events: auto;
+}
+
+.tutorial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-md);
+}
+
+.tutorial-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tutorial-close {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.tutorial-close:hover {
+  color: var(--primary);
+  transform: rotate(90deg);
+}
+
+.tutorial-description {
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+}
+
+.tutorial-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+}
+
+.tutorial-skip,
+.tutorial-next {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 0.9rem;
+}
+
+.tutorial-skip {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 0, 110, 0.3);
+}
+
+.tutorial-skip:hover {
+  color: var(--text-primary);
+  border-color: rgba(255, 0, 110, 0.6);
+}
+
+.tutorial-next {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 0, 110, 0.5);
+}
+
+.tutorial-next:hover {
+  box-shadow: 0 0 25px rgba(255, 0, 110, 0.8);
+  transform: translateY(-2px);
+}

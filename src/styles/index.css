@@ -1,0 +1,226 @@
+/* Fred Again Music Game - Global Styles */
+
+:root {
+  /* Color Palette - Electric Neon Theme */
+  --primary: #ff006e;
+  --primary-dark: #c20055;
+  --secondary: #00f5ff;
+  --secondary-light: #00ffff;
+  --accent: #ffbe0b;
+  --accent-light: #ffd60a;
+  --purple: #8338ec;
+  --purple-light: #a951ff;
+  --green: #3a86ff;
+  --green-light: #5ac8ff;
+
+  /* Neutral Colors */
+  --bg-dark: #0a0a0b;
+  --bg-darker: #05050a;
+  --bg-light: #1a1a2e;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0c0;
+  --text-muted: #808090;
+
+  /* Category Colors */
+  --drums-color: #ff6b6b;
+  --bass-color: #4c6ef5;
+  --synths-color: #69db7c;
+  --vocals-color: #ff922b;
+  --effects-color: #d0bfff;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* Shadows & Glows */
+  --glow-sm: 0 0 10px rgba(255, 0, 110, 0.4);
+  --glow-md: 0 0 20px rgba(255, 0, 110, 0.6);
+  --glow-lg: 0 0 40px rgba(255, 0, 110, 0.8);
+  --shadow-dark: 0 10px 40px rgba(0, 0, 0, 0.8);
+  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+/* Smooth scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--purple);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--purple-light);
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Button Base Styles */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-base);
+  font-weight: 500;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Input Base Styles */
+input[type="range"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--bg-light);
+  outline: none;
+  border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--primary);
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: var(--glow-sm);
+  transition: all var(--transition-fast);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  width: 20px;
+  height: 20px;
+  box-shadow: var(--glow-md);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: var(--primary);
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  box-shadow: var(--glow-sm);
+  transition: all var(--transition-fast);
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  width: 20px;
+  height: 20px;
+  box-shadow: var(--glow-md);
+}
+
+/* Animations */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: var(--glow-sm);
+  }
+  50% {
+    box-shadow: var(--glow-md);
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Utilities */
+.no-select {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.glow {
+  box-shadow: var(--glow-md);
+}
+
+.pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}

@@ -1,0 +1,39 @@
+{
+  "productName": "Fred Again Music Game",
+  "version": "0.1.0",
+  "identifier": "com.fredagain.musicgame",
+  "build": {
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Fred Again Music Game",
+        "width": 1400,
+        "height": 900,
+        "resizable": true,
+        "fullscreen": false,
+        "minWidth": 800,
+        "minHeight": 600
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "appimage",
+      "deb"
+    ],
+    "deb": {
+      "depends": [
+        "webkit2gtk-4.0",
+        "libssl-dev"
+      ]
+    }
+  }
+}
