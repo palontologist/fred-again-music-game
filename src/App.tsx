@@ -9,6 +9,8 @@ import SpectrumAnalyzer from './components/SpectrumAnalyzer'
 import LevelMeters from './components/LevelMeters'
 import SamplePad from './components/SamplePad'
 import SongTemplates from './components/SongTemplates'
+import EffectsPanel from './components/EffectsPanel'
+import Timeline from './components/Timeline'
 import './styles/index.css'
 import './styles/App.css'
 import './styles/Header.css'
@@ -31,6 +33,14 @@ export default function App() {
             {/* Sample Pad (MPC-style) */}
             <SamplePad onPadPress={(padId, velocity) => {
               console.log(`Pad ${padId} pressed with velocity ${velocity}`)
+            }} />
+
+            {/* Timeline / Sequencer */}
+            <Timeline totalBars={32} tempo={120} />
+
+            {/* Effects Panel */}
+            <EffectsPanel onEffectChange={(effectId, value) => {
+              console.log(`Effect ${effectId} changed to ${value}`)
             }} />
 
             <div className="mixer-and-visualization">
